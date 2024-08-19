@@ -17,7 +17,7 @@ app = Flask(__name__)
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-model = load_model( './model.h5')
+model = load_model('./model.h5', compile=False)
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
