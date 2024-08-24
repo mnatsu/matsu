@@ -19,6 +19,8 @@ def allowed_file(filename):
 
 model = load_model('./model.h5', compile=False)
 
+print(model)
+
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
